@@ -7,7 +7,13 @@
     height: 500px;
     box-shadow: 0 0 5px;
 }
-.beer-card img {
+img {
+    display: inline;
     height: 300px;
-    /* background-color: aqua; */
+    width: auto;
+}
+
+main {
+    /* text-align: center; */
+    max-width: 500px;
 }
