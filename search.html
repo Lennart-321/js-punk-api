@@ -10,9 +10,39 @@
         <nav></nav>
         <main>
             <form id="search-form">
-                <label for="name">Beer name</label>
-                <input type="text" name="name" id="beer-name" />
-                <input type="button" value="Search" id="search-button" />
+                <div>
+                    <label for="name">Beer name</label>
+                    <input type="text" name="name" id="beer-name" />
+                </div>
+
+                <div>
+                    <label for="malt">Malt type</label>
+                    <input type="text" name="malt" id="malt" />
+                </div>
+
+                <div>
+                    <label for="hops">Hops</label>
+                    <input type="text" name="hops" id="hops" />
+                </div>
+
+                <div class="two-input">
+                    <label for="brewed-after">Brewed after</label>
+                    <input type="month" name="brewed-after" id="brewed-after" />
+                    <label for="brewed-before">Brewed before</label>
+                    <input type="month" name="brewed-before" id="brewed-before" />
+                </div>
+
+                <div class="two-input">
+                    <label for="abv-gt">ABV greater than</label>
+                    <input type="number" name="abv-gt" id="abv-gt" />
+                    <label for="abv-lt">ABV less than</label>
+                    <input type="number" name="abv-lt" id="abv-lt" />
+                </div>
+
+                <span
+                    ><input type="button" value="Search" id="search-button" /><span>&nbsp;&nbsp;&nbsp;</span
+                    ><span id="error-message" hidden>X</span></span
+                >
             </form>
             <section id="search-result"></section>
         </main>

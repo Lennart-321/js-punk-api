@@ -13,7 +13,57 @@ img {
     width: auto;
 }
 
-main {
+#main {
     /* text-align: center; */
     max-width: 500px;
+}
+
+main {
+    width: auto;
+    display: inline-block;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    gap: 5px;
+
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px grey;
+}
+form input {
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 3px;
+    height: 18px;
+    width: 100%;
+}
+.two-input input {
+    width: 120px;
+    margin: 0 25px 0 0;
+}
+form div {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+
+    /* margin: 0 5px; */
+}
+form label {
+    font-size: 11px;
+    margin: 0 0 1px 0;
+}
+form > span {
+    margin: 10px 0 0 0;
+}
+
+#search-button {
+    width: 60px;
+    /* margin: 5px; */
+}
+#error-message {
+    color: #c00;
 }
