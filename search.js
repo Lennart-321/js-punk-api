@@ -1,5 +1,9 @@
 document.getElementById("search-button").addEventListener("click", submitSearch);
 document.getElementById("search-form").addEventListener("submit", submitSearch);
+document.getElementById("search-form").addEventListener("keydown", e => {
+    //console.log(e);
+    if (e.key === "Enter") submitSearch(e);
+});
 
 function cleanName(rawName) {
     return rawName.trim().replaceAll(/\s+/g, "_");
