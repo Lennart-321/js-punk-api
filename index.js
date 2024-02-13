@@ -1,5 +1,6 @@
 const main = document.getElementById("main");
 let currentBeerId = "";
+//localStorage.clear();
 
 function insertLandingPageCard(beer) {
     //console.log("insert...:", beer);
@@ -56,12 +57,24 @@ function nameList(objs) {
 // Brewers tips
 
 async function getBeer(id) {
-    if (!id) id = "random";
+    let beerStr = null;
+    let beer = null;
+    if (!id) {
+        id = "random";
+    } else if ((beerStr = window.localStorage.getItem(id))) {
+        beer = JSON.parse(beerStr);
+        console.log("From cache:", id, typeof id, typeof beer, beer.id, beer.name, beer, beerStr);
+        return beer;
+    }
     console.log(id);
     const response = await fetch("https://api.punkapi.com/v2/beers/" + id);
-    const json = await response.json();
-    console.log(json);
-    return json[0];
+    const beers = await response.json();
+    console.log("From API:", beers);
+    beer = beers[0];
+    beerStr = JSON.stringify(beer);
+    console.log("Into cache:", beer.id, typeof beer.id, beerStr, beer);
+    window.localStorage.setItem(beer.id, beerStr);
+    return beer;
 }
 
 if (window.location.search.length > 1) currentBeerId = window.location.search.slice(1);
